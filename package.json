@@ -1,0 +1,25 @@
+{
+  "name": "koa-conditional-get",
+  "description": "Conditional GET support for koa",
+  "repository": "koajs/conditional-get",
+  "version": "1.0.0",
+  "keywords": [
+    "koa",
+    "middleware",
+    "cache",
+    "caching",
+    "etag"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "koa": "0.0.1",
+    "should": "~1.2.2",
+    "mocha": "~1.12.0",
+    "supertest": "~0.7.1",
+    "koa-etag": "~1.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
