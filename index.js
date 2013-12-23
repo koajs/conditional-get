@@ -14,8 +14,9 @@ module.exports = conditional;
 function conditional() {
   return function *(next){
     yield next;
-    if (this.stale) return;
-    this.status = 304;
-    this.body = null;
+    if (this.fresh) {
+      this.status = 304;
+      this.body = null;
+    }
   }
 }
