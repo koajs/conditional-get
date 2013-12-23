@@ -1,4 +1,3 @@
-
 /**
  * Expose `conditional`.
  */
@@ -13,12 +12,10 @@ module.exports = conditional;
  */
 
 function conditional() {
-  return function(next){
-    return function *(){
-      yield next;
-      if (this.stale) return;
-      this.status = 304;
-      this.body = null;
-    }
+  return function *(next){
+    yield next;
+    if (this.stale) return;
+    this.status = 304;
+    this.body = null;
   }
 }
