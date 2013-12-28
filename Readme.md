@@ -1,5 +1,5 @@
 
-# koa-conditional-get
+# koa-conditional-get [![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
 
  Conditional GET support for koa.
 
@@ -31,7 +31,7 @@ app.use(etag());
 app.use(function(next){
   return function *(){
     yield next;
-    
+
     this.body = {
       name: 'tobi',
       species: 'ferret',
