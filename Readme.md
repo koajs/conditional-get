@@ -28,16 +28,14 @@ app.use(etag());
 
 // respond
 
-app.use(function(next){
-  return function *(){
-    yield next;
+app.use(function *(next){
+  yield next;
 
-    this.body = {
-      name: 'tobi',
-      species: 'ferret',
-      age: 2
-    };
-  }
+  this.body = {
+    name: 'tobi',
+    species: 'ferret',
+    age: 2
+  };
 })
 
 app.listen(3000);

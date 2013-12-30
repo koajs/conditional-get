@@ -13,16 +13,14 @@ describe('conditional()', function(){
       app.use(conditional());
       app.use(etag());
 
-      app.use(function(next){
-        return function *(){
-          yield next;
-          
-          this.body = {
-            name: 'tobi',
-            species: 'ferret',
-            age: 2
-          };
-        }
+      app.use(function *(next){
+        yield next;
+
+        this.body = {
+          name: 'tobi',
+          species: 'ferret',
+          age: 2
+        };
       })
 
       request(app.listen())
@@ -39,16 +37,14 @@ describe('conditional()', function(){
       app.use(conditional());
       app.use(etag());
 
-      app.use(function(next){
-        return function *(){
-          yield next;
-          
-          this.body = {
-            name: 'tobi',
-            species: 'ferret',
-            age: 2
-          };
-        }
+      app.use(function *(next){
+        yield next;
+
+        this.body = {
+          name: 'tobi',
+          species: 'ferret',
+          age: 2
+        };
       })
 
       request(app.listen())
