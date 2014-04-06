@@ -2,7 +2,7 @@
   "name": "koa-conditional-get",
   "description": "Conditional GET support for koa",
   "repository": "koajs/conditional-get",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "koa",
     "middleware",
@@ -14,11 +14,11 @@
     "index.js"
   ],
   "devDependencies": {
-    "koa": "0.2.0",
-    "should": "~1.2.2",
-    "mocha": "~1.12.0",
-    "supertest": "~0.7.1",
-    "koa-etag": "~1.2.2"
+    "koa": "0",
+    "should": "3",
+    "mocha": "1",
+    "supertest": "0",
+    "koa-etag": "1"
   },
   "license": "MIT",
   "dependencies": {},
