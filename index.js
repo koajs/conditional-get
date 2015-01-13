@@ -12,7 +12,7 @@ module.exports = conditional;
  */
 
 function conditional() {
-  return function *(next){
+  return function *conditional(next){
     yield* next;
     if (this.fresh) {
       this.status = 304;
