@@ -15,11 +15,11 @@
   ],
   "devDependencies": {
     "istanbul-harmony": "0",
-    "koa": "0",
-    "should": "3",
-    "mocha": "1",
-    "supertest": "0",
-    "koa-etag": "1"
+    "koa": "1.1.2",
+    "should": "8.0.2",
+    "mocha": "2.3.4",
+    "supertest": "1.1.0",
+    "koa-etag": "2.1.0"
   },
   "license": "MIT",
   "dependencies": {},
