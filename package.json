@@ -16,7 +16,7 @@
   "devDependencies": {
     "istanbul-harmony": "0",
     "koa": "0",
-    "should": "3",
+    "should": "8.1.1",
     "mocha": "1",
     "supertest": "0",
     "koa-etag": "1"
