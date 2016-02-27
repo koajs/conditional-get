@@ -16,7 +16,6 @@
   "devDependencies": {
     "istanbul-harmony": "0",
     "koa": "0",
-    "should": "3",
     "mocha": "1",
     "supertest": "0",
     "koa-etag": "1"
@@ -24,8 +23,8 @@
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "test": "NODE_ENV=test mocha --require should --reporter spec",
-    "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
-    "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
+    "test": "NODE_ENV=test mocha --reporter spec",
+    "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
   }
 }
