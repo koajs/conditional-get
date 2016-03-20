@@ -16,10 +16,10 @@
   "devDependencies": {
     "etag": "^1.7.0",
     "istanbul": "^0.4.2",
-    "koa": "^1.0.0",
+    "koa": "^1.2.0",
     "koa-etag": "^2.1.1",
-    "mocha": "^2.0.0",
-    "supertest": "^1.0.0"
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
   },
   "license": "MIT",
   "dependencies": {},
