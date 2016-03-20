@@ -1,10 +1,12 @@
 
-var request = require('supertest');
-var calculate = require('etag');
-var conditional = require('..');
-var etag = require('koa-etag');
-var koa = require('koa');
-var fs = require('fs');
+'use strict';
+
+const request = require('supertest');
+const calculate = require('etag');
+const conditional = require('..');
+const etag = require('koa-etag');
+const Koa = require('koa');
+const fs = require('fs');
 
 var body = {
   name: 'tobi',
@@ -15,16 +17,16 @@ var body = {
 describe('conditional()', function(){
   describe('when cache is fresh', function(){
     it('should respond with 304', function(done){
-      var app = koa();
+      const app = new Koa();
 
       app.use(conditional());
       app.use(etag());
 
-      app.use(function *(next){
-        yield next;
-
-        this.body = body;
-      })
+      app.use((ctx, next) => {
+        return next().then(() => {
+          ctx.body = body;
+        });
+      });
 
       request(app.listen())
       .get('/')
@@ -35,16 +37,16 @@ describe('conditional()', function(){
 
   describe('when cache is stale', function(){
     it('should do nothing', function(done){
-      var app = koa();
+      const app = new Koa();
 
       app.use(conditional());
       app.use(etag());
 
-      app.use(function *(next){
-        yield next;
-
-        this.body = body;
-      })
+      app.use((ctx, next) => {
+        return next().then(() => {
+          ctx.body = body;
+        });
+      });
 
       request(app.listen())
       .get('/')

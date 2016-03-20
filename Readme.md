@@ -12,10 +12,10 @@ $ npm install koa-conditional-get
 ## Example
 
 ```js
-var conditional = require('koa-conditional-get');
-var etag = require('koa-etag');
-var koa = require('koa');
-var app = koa();
+const conditional = require('koa-conditional-get');
+const etag = require('koa-etag');
+const Koa = require('koa');
+const app = new Koa();
 
 // use it upstream from etag so
 // that they are present
@@ -28,10 +28,10 @@ app.use(etag());
 
 // respond
 
-app.use(function *(next){
-  yield next;
+app.use(async function(ctx, next){
+  await next();
 
-  this.body = {
+  ctx.body = {
     name: 'tobi',
     species: 'ferret',
     age: 2
