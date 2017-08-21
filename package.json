@@ -27,5 +27,8 @@
     "test": "NODE_ENV=test mocha --reporter spec",
     "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
     "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
+  },
+  "publishConfig": {
+    "tag": "v1"
   }
 }
