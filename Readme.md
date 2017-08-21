@@ -1,7 +1,9 @@
 
-# koa-conditional-get [![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
+# koa-conditional-get
 
- Conditional GET support for koa.
+[![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
+
+Conditional GET support for koa.
 
 ## Installation
 
@@ -45,4 +47,4 @@ console.log('listening on port 3000');
 
 ## License
 
-  MIT
+MIT
