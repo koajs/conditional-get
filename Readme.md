@@ -1,6 +1,8 @@
 
 # koa-conditional-get [![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/koajs/conditional-get.svg)](https://greenkeeper.io/)
+
  Conditional GET support for koa.
 
 ## Installation
