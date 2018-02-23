@@ -27,8 +27,8 @@
   "dependencies": {},
   "scripts": {
     "test": "NODE_ENV=test ava",
-    "test-cov": "NODE_ENV=test nyc ava",
-    "test-travis": "NODE_ENV=test nyc report --reporter=text-lcov"
+    "test-travis": "NODE_ENV=test nyc ava",
+    "test-cov": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls"
   },
   "xo": {
     "semicolon": false
