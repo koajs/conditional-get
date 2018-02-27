@@ -8,7 +8,7 @@
  */
 
 function conditional() {
-  return async function(ctx, next) {
+  return async (ctx, next) => {
     await next();
     if (ctx.fresh) {
       ctx.status = 304;

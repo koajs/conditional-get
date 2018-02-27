@@ -32,11 +32,24 @@
   "license": "MIT",
   "dependencies": {},
   "scripts": {
+    "pretest": "xo",
     "test": "NODE_ENV=test ava",
     "test-travis": "NODE_ENV=test nyc ava",
     "test-cov": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls"
   },
   "xo": {
-    "extends": "eslint-config-koa"
+    "extends": "eslint-config-koa",
+    "rules": {
+      "capitalized-comments": 0,
+      "semi": 0,
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ]
+    }
   }
 }

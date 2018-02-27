@@ -8,43 +8,43 @@ import conditional from '../.'
 import server from './helpers/server'
 
 const body = {
-	name: 'tobi',
-	species: 'ferret',
-	age: 2
+  name: 'tobi',
+  species: 'ferret',
+  age: 2
 }
 
 test('when cache is fresh should respond with 304', async t => {
-	const koa = new Koa()
-	koa
-		.use(conditional())
-		.use(etag())
-		.use(async (ctx, next) => {
-			await next()
-			ctx.body = body
-		})
+  const koa = new Koa()
+  koa
+    .use(conditional())
+    .use(etag())
+    .use(async (ctx, next) => {
+      await next()
+      ctx.body = body
+    })
 
-	const app = server(koa)
-	const res = await app
-		.get('/')
-		.set('If-None-Match', calculate(JSON.stringify(body)))
+  const app = server(koa)
+  const res = await app
+    .get('/')
+    .set('If-None-Match', calculate(JSON.stringify(body)))
 
-	t.is(res.status, 304)
+  t.is(res.status, 304)
 })
 
 test('when cache is stale should do nothing', async t => {
-	const koa = new Koa()
-	koa
-		.use(conditional())
-		.use(etag())
-		.use(async (ctx, next) => {
-			await next()
-			ctx.body = body
-		})
+  const koa = new Koa()
+  koa
+    .use(conditional())
+    .use(etag())
+    .use(async (ctx, next) => {
+      await next()
+      ctx.body = body
+    })
 
-	const app = server(koa)
-	const res = await app
-		.get('/')
-		.set('If-None-Match', 'tobi')
+  const app = server(koa)
+  const res = await app
+    .get('/')
+    .set('If-None-Match', 'tobi')
 
-	t.is(res.status, 200)
+  t.is(res.status, 200)
 })
