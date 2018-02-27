@@ -1,11 +1,4 @@
-
 'use strict';
-
-/**
- * Expose `conditional`.
- */
-
-module.exports = conditional;
 
 /**
  * Conditional GET support middleware.
@@ -15,12 +8,17 @@ module.exports = conditional;
  */
 
 function conditional() {
-  return function conditional(ctx, next) {
-    return next().then(() => {
-      if (ctx.fresh) {
-        ctx.status = 304;
-        ctx.body = null;
-      }
-    });
-  }
+  return async (ctx, next) => {
+    await next();
+    if (ctx.fresh) {
+      ctx.status = 304;
+      ctx.body = null;
+    }
+  };
 }
+
+/**
+ * Expose `conditional`.
+ */
+
+module.exports = conditional;

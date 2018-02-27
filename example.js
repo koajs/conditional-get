@@ -1,22 +1,20 @@
 
 'use strict';
 
-const conditional = require('./');
-const etag = require('koa-etag');
 const Koa = require('koa');
+const etag = require('koa-etag');
+const conditional = require('./.');
+
 const app = new Koa();
 
 // use it upstream from etag so
 // that they are present
-
 app.use(conditional());
 
 // add etags
-
 app.use(etag());
 
 // respond
-
 app.use((ctx, next) => {
   return next().then(() => {
     ctx.body = {
@@ -25,7 +23,7 @@ app.use((ctx, next) => {
       age: 2
     };
   });
-})
+});
 
 app.listen(3000);
 
