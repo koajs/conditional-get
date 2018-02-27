@@ -15,6 +15,12 @@
   ],
   "devDependencies": {
     "ava": "0.25.0",
+    "eslint-config-koa": "2.0.2",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-import": "2.9.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
     "etag": "1.8.1",
     "hash-to-port": "1.0.0",
     "koa": "2.5.0",
@@ -31,6 +37,6 @@
     "test-cov": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls"
   },
   "xo": {
-    "semicolon": false
+    "extends": "eslint-config-koa"
   }
 }
