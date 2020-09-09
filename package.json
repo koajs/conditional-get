@@ -3,6 +3,16 @@
   "description": "Conditional GET support for koa",
   "repository": "koajs/conditional-get",
   "version": "2.0.0",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --exit",
+    "precov": "rimraf .nyc_output coverage",
+    "cov": "nyc npm run test",
+    "ci": "npm run lint && npm run cov"
+  },
   "keywords": [
     "koa",
     "middleware",
@@ -10,22 +20,27 @@
     "caching",
     "etag"
   ],
-  "files": [
-    "index.js"
-  ],
-  "devDependencies": {
-    "etag": "^1.8.1",
-    "istanbul": "^0.4.5",
-    "koa": "^2.5.0",
-    "koa-etag": "^3.0.0",
-    "mocha": "^3.5.3",
-    "supertest": "^3.0.0"
-  },
   "license": "MIT",
-  "dependencies": {},
-  "scripts": {
-    "test": "NODE_ENV=test mocha --reporter spec",
-    "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
-    "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
-  }
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "etag": "^1.8.1",
+    "koa": "^2.13.0",
+    "koa-etag": "^4.0.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "supertest": "^4.0.2"
+  },
+  "enignes": {
+    "node": ">= 10"
+  },
+  "bugs": {
+    "url": "https://github.com/koajs/conditional-get/issues"
+  },
+  "homepage": "https://github.com/koajs/conditional-get#readme"
 }
