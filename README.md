@@ -1,13 +1,20 @@
 
-# koa-conditional-get [![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
+# koa-conditional-get 
 
- Conditional GET support for koa.
+[![Build Status](https://travis-ci.org/koajs/conditional-get.png)](https://travis-ci.org/koajs/conditional-get)
+
+Conditional GET support for koa.
+
 
 ## Installation
 
-```js
+```bash
+# npm
 $ npm install koa-conditional-get
+# yarn
+$ yarn add koa-conditional-get
 ```
+
 
 ## Example
 
@@ -19,15 +26,12 @@ const app = new Koa();
 
 // use it upstream from etag so
 // that they are present
-
 app.use(conditional());
 
 // add etags
-
 app.use(etag());
 
 // respond
-
 app.use(async function(ctx, next){
   await next();
 
@@ -38,11 +42,12 @@ app.use(async function(ctx, next){
   };
 })
 
-app.listen(3000);
-
-console.log('listening on port 3000');
+app.listen(
+  3000,
+  console.log('listening on port 3000')
+)
 ```
 
 ## License
 
-  MIT
+[MIT](LICENSE)
