@@ -36,7 +36,7 @@
     "rimraf": "^3.0.2",
     "supertest": "^4.0.2"
   },
-  "enignes": {
+  "engines": {
     "node": ">= 10"
   },
   "bugs": {
