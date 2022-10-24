@@ -1,2 +1,4 @@
 root: true
 extends: standard
+parserOptions:
+  ecmaVersion: latest
