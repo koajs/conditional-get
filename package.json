@@ -34,7 +34,7 @@
     "mocha": "^11.7.4",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
-    "supertest": "^6.3.1"
+    "supertest": "^7.1.4"
   },
   "engines": {
     "node": ">= 16"
